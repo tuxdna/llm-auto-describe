@@ -138,7 +138,7 @@ Provide the answer in well formatted markdown raw text that can be copied as is.
 
 markdown_list = []
 
-print(f"description_prompt\n{description_prompt}")
+#print(f"description_prompt\n{description_prompt}")
 
 description_response = execute_prompt(description_prompt)
 print(f"{description_response=}")
@@ -207,7 +207,6 @@ Do not output anything else except the Python code.
 
 {json.dumps(feature_hist_data, indent=2)}
 """
-
     plot_response = execute_prompt(plot_prompt)
     print(f"{plot_response=}")
 
@@ -220,7 +219,7 @@ Do not output anything else except the Python code.
     markdown_list.append(f"""
 ## Plot of feature: {feature_name}
 
-![plot_file_path]({plot_file_path})
+![{plot_file_path}]({plot_file_path})
 
 """)
 

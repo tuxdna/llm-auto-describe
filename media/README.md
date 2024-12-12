@@ -1,75 +1,81 @@
-```
-# Dataset Overview
+# Dataset Description
 
-The dataset consists of 2,652 entries across 8 features. It appears to be a collection of reviews or ratings related to movies and other types of media, with various attributes captured for each entry.
+## Overview
+The dataset consists of 2,652 entries across 8 features. It includes information related to various types of media, particularly focusing on reviews or ratings for fiction and movies in different languages.
 
 ## Shape of Data
+- **Number of Rows:** 2652
+- **Number of Columns:** 8
 
-- **Total Entries (Rows)**: 2652
-- **Total Features (Columns)**: 8
+## Data Types
+The columns in the dataset have the following data types:
+- **date:** object (string representation of date)
+- **language:** object (categorical representation of language)
+- **type:** object (categorical representation of media type)
+- **title:** object (string representation of the media title)
+- **by:** object (string representation of the creators or contributors)
+- **overall:** int64 (integer representation of overall rating)
+- **quality:** int64 (integer representation of quality rating)
+- **repeatability:** int64 (integer representation of repeatability rating)
 
-## Data Types of Features
-
-The dataset contains a mix of object and integer data types:
-
-| Feature        | Data Type |
-|----------------|-----------|
-| date           | object    |
-| language       | object    |
-| type           | object    |
-| title          | object    |
-| by             | object    |
-| overall        | int64     |
-| quality        | int64     |
-| repeatability   | int64     |
-
-## Null Counts of Features
-
-The dataset has some missing values, particularly in the `date` and `by` columns:
-
-| Feature        | Null Count |
-|----------------|------------|
-| date           | 99         |
-| language       | 0          |
-| type           | 0          |
-| title          | 0          |
-| by             | 262        |
-| overall        | 0          |
-| quality        | 0          |
-| repeatability   | 0          |
+## Null Counts
+The dataset has some missing values in the following features:
+- **date:** 99 missing entries
+- **language:** 0 missing entries
+- **type:** 0 missing entries
+- **title:** 0 missing entries
+- **by:** 262 missing entries
+- **overall:** 0 missing entries
+- **quality:** 0 missing entries
+- **repeatability:** 0 missing entries
 
 ## Descriptive Statistics of Numeric Features
-
-The numeric features `overall`, `quality`, and `repeatability` are summarized below:
-
-| Statistic      | overall  | quality  | repeatability |
-|----------------|----------|----------|---------------|
-| count          | 2652.00  | 2652.00  | 2652.00       |
-| mean           | 3.05     | 3.21     | 1.49          |
-| std            | 0.76     | 0.80     | 0.60          |
-| min            | 1.00     | 1.00     | 1.00          |
-| 25%            | 3.00     | 3.00     | 1.00          |
-| 50%            | 3.00     | 3.00     | 1.00          |
-| 75%            | 3.00     | 4.00     | 2.00          |
-| max            | 5.00     | 5.00     | 3.00          |
+The following statistics summarize the numeric features:
+- **overall:**
+  - Count: 2652
+  - Mean: 3.05
+  - Standard Deviation: 0.76
+  - Minimum: 1
+  - 25th Percentile: 3
+  - Median (50th Percentile): 3
+  - 75th Percentile: 3
+  - Maximum: 5
+  
+- **quality:**
+  - Count: 2652
+  - Mean: 3.21
+  - Standard Deviation: 0.80
+  - Minimum: 1
+  - 25th Percentile: 3
+  - Median (50th Percentile): 3
+  - 75th Percentile: 4
+  - Maximum: 5
+  
+- **repeatability:**
+  - Count: 2652
+  - Mean: 1.49
+  - Standard Deviation: 0.60
+  - Minimum: 1
+  - 25th Percentile: 1
+  - Median (50th Percentile): 1
+  - 75th Percentile: 2
+  - Maximum: 3
 
 ## Sample Data
+Here are ten samples from the dataset:
 
-Below are ten samples from the dataset:
-
-|      | date      | language   | type    | title                  | by                                |   overall |   quality |   repeatability |
-|-----:|:----------|:-----------|:--------|:-----------------------|:----------------------------------|----------:|----------:|----------------:|
-| 2179 | 17-Oct-06 | English    | movie   | Spy Game               | Robert Redford, Brad Pitt         |         3 |         3 |               1 |
-|   52 | 04-Jan-24 | English    | movie   | Threat Level Midnight  | Steve Carell                      |         3 |         3 |               1 |
-|  456 | 08-May-20 | English    | fiction | Shadow's Edge          | Brent Weeks                       |         2 |         3 |               1 |
-|  279 | 27-Feb-22 | Tamil      | movie   | Mahaan                 | Vikram, Bobby Simha, Dhruv Vikram |         3 |         4 |               1 |
-| 2139 | 17-Nov-06 | English    | movie   | Fargo                  | William Macy, Steve Buscemi       |         3 |         3 |               1 |
-| 2575 | nan       | English    | movie   | Citizen Kane           | nan                               |         4 |         4 |               1 |
-|  892 | 11-Dec-17 | English    | movie   | Spiderman:  Homecoming | Tom Holland                       |         3 |         4 |               2 |
-| 1134 | 29-Jan-15 | Hindi      | movie   | Baby                   | Akshay Kumar                      |         3 |         4 |               2 |
-|   95 | 18-Jun-23 | English    | movie   | The Proposal           | Ryan Reynolds, Sandra Bullock     |         2 |         2 |               1 |
-| 1342 | 23-May-13 | English    | movie   | The Pink Panther 2     | Steve Martin, Aishwarya Rai       |         3 |         3 |               2 |
-```
+|      | date      | language   | type    | title                         | by                             |   overall |   quality |   repeatability |
+|-----:|:----------|:-----------|:--------|:------------------------------|:-------------------------------|----------:|----------:|----------------:|
+| 1796 | 11-Nov-08 | English    | fiction | The Alchemyst                 | Michael Scott                  |         3 |         3 |               2 |
+| 2442 | 28-Nov-05 | English    | movie   | The Towering Inferno          | Steve McQueen, Paul Newman     |         4 |         3 |               2 |
+| 1335 | 02-Jul-13 | English    | movie   | Taken 2                       | Liam Neeson                    |         3 |         3 |               2 |
+|  719 | 26-Jan-19 | Hindi      | movie   | Andhadhun                     | Ayushmann Khurrana, Tabu       |         4 |         4 |               1 |
+| 1811 | 14-Oct-08 | Tamil      | movie   | Missiamma                     | Gemini, Savithri               |         4 |         4 |               2 |
+| 1286 | 29-Nov-13 | Tamil      | movie   | Varuthapadatha Valibar Sangam | Sivakarthikeyan, Sathyaraj     |         2 |         2 |               2 |
+| 1528 | 05-Oct-10 | English    | fiction | The Sorceress                 | Michael Scott                  |         2 |         2 |               2 |
+| 2377 | 06-Feb-06 | English    | movie   | Training Day                  | Denzel Washington, Ben Affleck |         4 |         4 |               1 |
+| 1382 | 31-May-12 | Tamil      | movie   | Aaru                          | Surya, Trisha                  |         3 |         3 |               2 |
+| 1511 | 02-Jan-11 | Tamil      | movie   | Uthama Puthiran               | Dhanush, Genelia               |         3 |         3 |               2 |
 
 # Histogram of features: ['overall', 'quality', 'repeatability']
 
@@ -79,17 +85,17 @@ Let us explore some features below
 
 ## Plot of feature: overall
 
-![plot_file_path](overall.plot.png)
+![overall.plot.png](overall.plot.png)
 
 
 
 ## Plot of feature: quality
 
-![plot_file_path](quality.plot.png)
+![quality.plot.png](quality.plot.png)
 
 
 
 ## Plot of feature: repeatability
 
-![plot_file_path](repeatability.plot.png)
+![repeatability.plot.png](repeatability.plot.png)
 
