@@ -1,85 +1,94 @@
-# Dataset Description
+# Detailed Description of the Dataset
 
 ## Overview
-The dataset consists of 2,652 entries across 8 features. It includes information related to various types of media, particularly focusing on reviews or ratings for fiction and movies in different languages.
+The dataset consists of 2,652 entries and 8 features. It appears to be a collection of reviews or ratings for various types of media, including movies and TV series, in multiple languages. The dataset includes both qualitative and quantitative attributes.
 
-## Shape of Data
-- **Number of Rows:** 2652
-- **Number of Columns:** 8
+## Features
 
-## Data Types
-The columns in the dataset have the following data types:
-- **date:** object (string representation of date)
-- **language:** object (categorical representation of language)
-- **type:** object (categorical representation of media type)
-- **title:** object (string representation of the media title)
-- **by:** object (string representation of the creators or contributors)
-- **overall:** int64 (integer representation of overall rating)
-- **quality:** int64 (integer representation of quality rating)
-- **repeatability:** int64 (integer representation of repeatability rating)
+1. **date** (object):
+   - Represents the date when the entry was made.
+   - Contains 99 null values.
+
+2. **language** (object):
+   - Specifies the language of the media.
+   - No null values.
+
+3. **type** (object):
+   - Indicates the type of media (e.g., movie, TV series, non-fiction).
+   - No null values.
+
+4. **title** (object):
+   - The title of the media.
+   - No null values.
+
+5. **by** (object):
+   - Represents the creators or actors involved in the media.
+   - Contains 262 null values, indicating that a significant number of entries lack this information.
+
+6. **overall** (int64):
+   - A numerical rating given to the media on a scale (1 to 5).
+   - No null values.
+   - Descriptive statistics:
+     - Mean: 3.05
+     - Standard Deviation: 0.76
+     - Minimum: 1
+     - Maximum: 5
+
+7. **quality** (int64):
+   - A numerical rating that likely reflects the quality of the media, also on a scale (1 to 5).
+   - No null values.
+   - Descriptive statistics:
+     - Mean: 3.21
+     - Standard Deviation: 0.80
+     - Minimum: 1
+     - Maximum: 5
+
+8. **repeatability** (int64):
+   - A numerical rating that may indicate how likely the reviewer is to recommend the media for repeated viewing.
+   - No null values.
+   - Descriptive statistics:
+     - Mean: 1.49
+     - Standard Deviation: 0.60
+     - Minimum: 1
+     - Maximum: 3
 
 ## Null Counts
-The dataset has some missing values in the following features:
-- **date:** 99 missing entries
-- **language:** 0 missing entries
-- **type:** 0 missing entries
-- **title:** 0 missing entries
-- **by:** 262 missing entries
-- **overall:** 0 missing entries
-- **quality:** 0 missing entries
-- **repeatability:** 0 missing entries
+- **date**: 99 null values
+- **language**: 0 null values
+- **type**: 0 null values
+- **title**: 0 null values
+- **by**: 262 null values
+- **overall**: 0 null values
+- **quality**: 0 null values
+- **repeatability**: 0 null values
 
 ## Descriptive Statistics of Numeric Features
-The following statistics summarize the numeric features:
-- **overall:**
-  - Count: 2652
-  - Mean: 3.05
-  - Standard Deviation: 0.76
-  - Minimum: 1
-  - 25th Percentile: 3
-  - Median (50th Percentile): 3
-  - 75th Percentile: 3
-  - Maximum: 5
+- **Overall Ratings**: 
+  - Mean: 3.05, with a standard deviation of 0.76.
+  - Ratings are skewed towards 3, with 75% of the ratings being 3 or lower.
   
-- **quality:**
-  - Count: 2652
-  - Mean: 3.21
-  - Standard Deviation: 0.80
-  - Minimum: 1
-  - 25th Percentile: 3
-  - Median (50th Percentile): 3
-  - 75th Percentile: 4
-  - Maximum: 5
+- **Quality Ratings**: 
+  - Mean: 3.21, indicating a generally positive perception of quality among the entries.
+  - Similarly skewed, with a majority rating of 3 or lower.
   
-- **repeatability:**
-  - Count: 2652
-  - Mean: 1.49
-  - Standard Deviation: 0.60
-  - Minimum: 1
-  - 25th Percentile: 1
-  - Median (50th Percentile): 1
-  - 75th Percentile: 2
-  - Maximum: 3
+- **Repeatability Ratings**: 
+  - Mean: 1.49, suggesting that repeatability is generally rated lower compared to overall and quality.
+  - All ratings are at least 1, indicating some level of agreement on repeatability.
 
-## Sample Data
-Here are ten samples from the dataset:
+## Sample Entries
+The dataset contains various entries showcasing different languages, media types, and ratings. Some examples include:
+- "Asura" (Telugu movie) rated 2 overall and 3 in quality.
+- "Chernobyl S1E2" (English TV series) rated 3 overall and 4 in quality, with a missing creator.
+- "Fermat's Last Theorem" (English non-fiction) rated 4 overall and 4 in quality.
 
-|      | date      | language   | type    | title                         | by                             |   overall |   quality |   repeatability |
-|-----:|:----------|:-----------|:--------|:------------------------------|:-------------------------------|----------:|----------:|----------------:|
-| 1796 | 11-Nov-08 | English    | fiction | The Alchemyst                 | Michael Scott                  |         3 |         3 |               2 |
-| 2442 | 28-Nov-05 | English    | movie   | The Towering Inferno          | Steve McQueen, Paul Newman     |         4 |         3 |               2 |
-| 1335 | 02-Jul-13 | English    | movie   | Taken 2                       | Liam Neeson                    |         3 |         3 |               2 |
-|  719 | 26-Jan-19 | Hindi      | movie   | Andhadhun                     | Ayushmann Khurrana, Tabu       |         4 |         4 |               1 |
-| 1811 | 14-Oct-08 | Tamil      | movie   | Missiamma                     | Gemini, Savithri               |         4 |         4 |               2 |
-| 1286 | 29-Nov-13 | Tamil      | movie   | Varuthapadatha Valibar Sangam | Sivakarthikeyan, Sathyaraj     |         2 |         2 |               2 |
-| 1528 | 05-Oct-10 | English    | fiction | The Sorceress                 | Michael Scott                  |         2 |         2 |               2 |
-| 2377 | 06-Feb-06 | English    | movie   | Training Day                  | Denzel Washington, Ben Affleck |         4 |         4 |               1 |
-| 1382 | 31-May-12 | Tamil      | movie   | Aaru                          | Surya, Trisha                  |         3 |         3 |               2 |
-| 1511 | 02-Jan-11 | Tamil      | movie   | Uthama Puthiran               | Dhanush, Genelia               |         3 |         3 |               2 |
+Overall, the dataset presents a rich source of information regarding media ratings across different languages and types.
+
+# Summary of the Dataset
+This dataset contains 2,652 entries with 8 features, including media ratings, types, languages, and creators, and highlights the qualitative and quantitative aspects of media reviews.
 
 # Histogram of features: ['overall', 'quality', 'repeatability']
 
-Let us explore some features below
+Let us explore some of these features below
 
 
 
